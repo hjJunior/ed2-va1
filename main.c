@@ -1,9 +1,10 @@
-#include "util.h";
+#include "util.c"
 
 
 int main() {
-    srand(time(NULL));
-    printf("Hello, World!\n");
+    srand((unsigned) time(NULL));
+    selectSizeForVector();
+
 
 
     /*printVetor(randomVetor, TAM);

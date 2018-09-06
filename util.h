@@ -19,4 +19,5 @@
 
 void printVetor (int vetor[], int tamanho);
 void copiaVetor(int vetor[], int vetorModificado[], int tamanho);
-void preencheVetor(int vetor[], int tamanho);
+void preencheVetor (int vetor[], int vector2[], int tamanho);
+void selectSizeForVector();
