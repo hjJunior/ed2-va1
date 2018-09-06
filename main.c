@@ -16,10 +16,14 @@ int main() {
 
 
 
-    // Iniciar as ordenações com os metodos
-    printVetor(bubbleSort(vetor, tamanho), tamanho);
+    // BubbleSort
+    bubbleSort(vetor, tamanho);
     copiaVetor(vetorBK, vetor, tamanho);
 
+
+    // InsertionSort
+    insertionSort(vetor, tamanho);
+    copiaVetor(vetorBK, vetor, tamanho);
 
 
     return 0;

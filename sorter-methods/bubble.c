@@ -5,7 +5,7 @@
 #include "bubble.h"
 
 int *bubbleSort (int vetor[], int tamanho) {
-    clock_t begin = clock();
+    clock_t startedAt = clock();
     int memoria, troca, i, j, contaTroca = 0, contaComparacao = 0;
     troca=1; /*A variável "troca" será a verificação da troca em cada passada*/
     for(j=tamanho-1; (j>=1) && (troca==1); j--){
@@ -21,8 +21,8 @@ int *bubbleSort (int vetor[], int tamanho) {
             }
         }
     }
-    clock_t end = clock();
-    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+    clock_t finishedAt = clock();
+    double time_spent = (double)(finishedAt - startedAt) / CLOCKS_PER_SEC;
     printf("-------------------\n");
     printf("Method: BubbleSort\n");
     printf("Compared: %d times\nChanges: %d times\n", contaComparacao, contaTroca);

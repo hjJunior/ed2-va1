@@ -8,7 +8,7 @@
 #include <time.h>
 
 #include "sorter-methods/bubble.c"
-// #include "sorter-methods/insertion.c"
+#include "sorter-methods/insertion.c"
 // #include "sorter-methods/selection.c"
 
 #define TAM1 10
