@@ -23,6 +23,12 @@ void preencheVetor (int vetor[], int vector2[], int tamanho) {
     }
 }
 
+void swap(int* a, int* b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
 int selectSizeForVector() {
     int number;
     printf("Please, type the number that matches the amount of vector size that you want for vector size\n");

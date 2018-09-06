@@ -57,6 +57,6 @@ void heapify(int vetor[], int tamanho, int i, int *contaComparacao, int *contaTr
         contaTroca++;
 
         // Recursively heapify the affected sub-tree
-        heapify(vetor, tamanho, largest, &contaComparacao, &contaTroca);
+        heapify(vetor, tamanho, largest, contaComparacao, contaTroca);
     }
 }

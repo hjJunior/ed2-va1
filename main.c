@@ -14,16 +14,13 @@ int main() {
     printf("Random vetor: \n");
     printVetor(vetor, tamanho);
 
-
     // BubbleSort
     bubbleSort(vetor, tamanho);
     copiaVetor(vetorBK, vetor, tamanho);
 
-
     // InsertionSort
     insertionSort(vetor, tamanho);
     copiaVetor(vetorBK, vetor, tamanho);
-
 
     // SelectionSort
     selectionSort(vetor, tamanho);
@@ -34,10 +31,12 @@ int main() {
     copiaVetor(vetorBK, vetor, tamanho);
 
     // Heap
-    printVetor(heapSort(vetor, tamanho), tamanho);
+    heapSort(vetor, tamanho);
     copiaVetor(vetorBK, vetor, tamanho);
 
     // Quick
+    printVetor(quickSort(vetor, 0, tamanho - 1), tamanho);
+    copiaVetor(vetorBK, vetor, tamanho);
 
     return 0;
 }
