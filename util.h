@@ -10,6 +10,7 @@
 #include "sorter-methods/bubble.c"
 #include "sorter-methods/insertion.c"
 #include "sorter-methods/selection.c"
+#include "sorter-methods/merge.c"
 
 #define TAM1 10
 #define TAM2 100

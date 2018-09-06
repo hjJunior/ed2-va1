@@ -29,6 +29,13 @@ int main() {
     selectionSort(vetor, tamanho);
     copiaVetor(vetorBK, vetor, tamanho);
 
+    // Merge
+    mergeSort(vetor, 0, tamanho - 1);
+    copiaVetor(vetorBK, vetor, tamanho);
+
+    // Head
+
+    // Quick
 
     return 0;
 }
