@@ -22,7 +22,7 @@ int main() {
 
 
     printVetor(randomVetor, TAM);
-    bubbleSort (randomVetor, TAM);
+    printVetor(bubbleSort (randomVetor, TAM), TAM);
 
     copiaVetor(randomVetorBK, randomVetor, TAM);
     printVetor(randomVetor, TAM);
