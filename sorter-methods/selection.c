@@ -4,9 +4,10 @@
 
 #include "selection.h"
 
-void selectionSort (int vetor[], int tamanho) { //Funçao selection recebendo vetor e tamanho
+int *selectionSort (int vetor[], int tamanho) { //Funçao selection recebendo vetor e tamanho
     int i, j, posicaoValorMinimo, aux;
     int contaTroca = 0, contaComparacao = 0;
+    clock_t startedAt = clock();
     for (i = 0; i < ( tamanho - 1 ); i++){ //Loop para percorrer o vetor
         posicaoValorMinimo = i; //O valor minimo de posiçao do vetor a ser percorrido e 0
         for (j = ( i + 1 ); j < tamanho; j++){ 			//Percorreremos o vetor da posiçao 1 ate o tamanho estimado
@@ -23,6 +24,12 @@ void selectionSort (int vetor[], int tamanho) { //Funçao selection recebendo ve
             vetor[posicaoValorMinimo] = aux;
         }
     }
-    printf("Numero de comparacoes: %d para %d trocas no metodo selectionSort sort\n", contaComparacao, contaTroca);
-    printVetor(vetor, TAM);
+    clock_t finishedAt = clock();
+    double time_spent = (double)(finishedAt - startedAt) / CLOCKS_PER_SEC;
+    printf("-------------------\n");
+    printf("Method: SelectionSort\n");
+    printf("Compared: %d times\nChanges: %d times\n", contaComparacao, contaTroca);
+    printf("Seconds of execution: %f\n", time_spent);
+    printf("-------------------\n");
+    return vetor;
 };

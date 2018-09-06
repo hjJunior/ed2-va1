@@ -15,7 +15,6 @@ int main() {
     printVetor(vetor, tamanho);
 
 
-
     // BubbleSort
     bubbleSort(vetor, tamanho);
     copiaVetor(vetorBK, vetor, tamanho);
@@ -23,6 +22,11 @@ int main() {
 
     // InsertionSort
     insertionSort(vetor, tamanho);
+    copiaVetor(vetorBK, vetor, tamanho);
+
+
+    // SelectionSort
+    selectionSort(vetor, tamanho);
     copiaVetor(vetorBK, vetor, tamanho);
 
 
