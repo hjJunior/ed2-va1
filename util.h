@@ -11,6 +11,7 @@
 #include "sorter-methods/insertion.c"
 #include "sorter-methods/selection.c"
 #include "sorter-methods/merge.c"
+#include "sorter-methods/heap.c"
 
 #define TAM1 10
 #define TAM2 100

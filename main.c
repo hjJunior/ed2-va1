@@ -33,7 +33,9 @@ int main() {
     mergeSort(vetor, 0, tamanho - 1);
     copiaVetor(vetorBK, vetor, tamanho);
 
-    // Head
+    // Heap
+    printVetor(heapSort(vetor, tamanho), tamanho);
+    copiaVetor(vetorBK, vetor, tamanho);
 
     // Quick
 
