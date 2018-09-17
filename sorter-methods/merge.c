@@ -4,9 +4,8 @@
 
 #include "merge.h"
 
-int *mergeSort (int vetor[], int inicio, int fim) {
-    size_t sizeOfVetor = (sizeof(vetor) / sizeof(int));
-    if (inicio == 0 && fim == sizeOfVetor) { // Starting the merge
+int *mergeSort (int vetor[], int inicio, int fim, int sizeOfVetor) {
+    if (inicio == 0 && fim == (sizeOfVetor - 1)) { // Starting the merge
         mergeStartedAt = clock();
         contaRecursividadeMerge = contaComparacaoMerge = contaTrocaMerge = 0;
     }
@@ -14,13 +13,13 @@ int *mergeSort (int vetor[], int inicio, int fim) {
     if (inicio < fim) {
         int meio = inicio + (fim - inicio) / 2;
 
-        mergeSort(vetor, inicio, meio);
-        mergeSort(vetor, meio + 1, fim);
+        mergeSort(vetor, inicio, meio, sizeOfVetor);
+        mergeSort(vetor, meio + 1, fim, sizeOfVetor);
 
         merge(vetor, inicio, meio, fim);
     }
 
-    if (fim == inicio && fim == sizeOfVetor) { // Identify the end of merge
+    if (inicio == 0 && fim == (sizeOfVetor - 1)) { // Identify the end of merge
         clock_t finishedAt = clock();
         double time_spent = (double)(finishedAt - mergeStartedAt) / CLOCKS_PER_SEC;
         printf("-------------------\n");
@@ -54,9 +53,11 @@ void merge(int arr[], int l, int m, int r) {
     j = 0; // Initial index of second subarray
     k = l; // Initial index of merged subarray
     while (i < n1 && j < n2)  {
+        contaComparacaoMerge++;
         if (L[i] <= R[j]) {
             arr[k] = L[i];
             i++;
+            contaTrocaMerge++;
         }
         else  {
             arr[k] = R[j];

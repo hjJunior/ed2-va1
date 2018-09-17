@@ -27,7 +27,7 @@ int main() {
     copiaVetor(vetorBK, vetor, tamanho);
 
     // Merge
-    mergeSort(vetor, 0, tamanho - 1);
+    mergeSort(vetor, 0, tamanho - 1, tamanho);
     copiaVetor(vetorBK, vetor, tamanho);
 
     // Heap
