@@ -35,7 +35,7 @@ int main() {
     copiaVetor(vetorBK, vetor, tamanho);
 
     // Quick
-    printVetor(quickSort(vetor, 0, tamanho - 1), tamanho);
+    printVetor(quickSort(vetor, 0, tamanho - 1, tamanho), tamanho);
     copiaVetor(vetorBK, vetor, tamanho);
 
     return 0;

@@ -4,17 +4,25 @@
 
 #include "quick.h"
 
-int *quickSort(int vetor[], int low, int high) {
-    size_t sizeOfVetor = (sizeof(vetor) / sizeof(vetor[0]));
+int *quickSort(int vetor[], int low, int high, int sizeOfVetor) {
+    if (low == 0 && high == (sizeOfVetor - 1)) {
+        quickStartedAt = clock();
+    }
     if (low < high) {
         int pi = partition(vetor, low, high);
 
-        // Separately sort elements before
-        // partition and after partition
-        quickSort(vetor, low, pi - 1);
-        quickSort(vetor, pi + 1, high);
+        quickSort(vetor, low, pi - 1, sizeOfVetor);
+        quickSort(vetor, pi + 1, high, sizeOfVetor);
     }
-//    if (low == 0 || (high + 1) == sizeOfVetor) printf("Acabou mesmo\n");
+    if (low == 0 && (high + 1) == sizeOfVetor) {
+        quickFinishedAt = clock();
+        double time_spent = (double)(quickFinishedAt - quickStartedAt) / CLOCKS_PER_SEC;
+        printf("-------------------\n");
+        printf("Method: QuickSort\n");
+        printf("Compared: %d times\nChanges: %d times\n", contaComparacaoQuick, contaTrocaQuick);
+        printf("Seconds of execution: %f\n", time_spent);
+        printf("-------------------\n");
+    }
     return vetor;
 }
 
@@ -24,9 +32,11 @@ int partition (int vetor[], int low, int high) {
 
     for (int j = low; j <= high- 1; j++) {
         // If current element is smaller than or equal to pivot
+        contaComparacaoQuick++;
         if (vetor[j] <= pivot) {
             i++;
             swap(&vetor[i], &vetor[j]);
+            contaTrocaQuick++;
         }
     }
     swap(&vetor[i + 1], &vetor[high]);
